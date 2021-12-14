@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="house-common" />
+        <module name="house-biz" />
+        <module name="house-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="austinRealtor" target="1.8" />
+      <module name="house-biz" target="1.8" />
+      <module name="house-common" target="1.8" />
+      <module name="house-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="house-biz" options="-parameters" />
+      <module name="house-common" options="-parameters" />
+      <module name="house-web" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -44,8 +44,10 @@ public class CommentService {
         List<Comment> comments = commentMapper.selectComments(houseId, size);
         comments.forEach(comment -> {
             User user = userService.getUserById(comment.getUserId());
-            comment.setAvatar(user.getAvatar());
-            comment.setUserName(user.getName());
+            if (comment != null && user != null) {
+                comment.setAvatar(user.getAvatar());
+                comment.setUserName(user.getName());
+            }
         });
         return comments;
     }

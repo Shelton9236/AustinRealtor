@@ -53,15 +53,6 @@ public class HouseService {
     @Autowired
     private MailService mailService;
 
-
-    /**
-     * 1.查询小区
-     * 2.添加图片服务器地址前缀
-     * 3.构建分页结果
-     *
-     * @param query
-     * @param pageParams
-     */
     public PageData<House> queryHouse(House query, PageParams pageParams) {
         List<House> houses = Lists.newArrayList();
         if (!Strings.isNullOrEmpty(query.getName())) {
@@ -72,7 +63,7 @@ public class HouseService {
                 query.setCommunityId(communities.get(0).getId());
             }
         }
-        houses = queryAndSetImg(query, pageParams);//添加图片服务器地址前缀
+        houses = queryAndSetImg(query, pageParams);
         Long count = houseMapper.selectPageCount(query);
         return PageData.buildPage(houses, count, pageParams.getPageSize(), pageParams.getPageNum());
     }
@@ -93,15 +84,6 @@ public class HouseService {
         return houseMapper.selectCommunity(community);
     }
 
-    /**
-     * 添加房屋图片
-     * 添加户型图片
-     * 插入房产信息
-     * 绑定用户和房产的关系
-     *
-     * @param house
-     * @param user
-     */
     public void addHouse(House house, User user) {
         if (CollectionUtils.isNotEmpty(house.getHouseFiles())) {
             String images = Joiner.on(",").join(fileService.getImgPaths(house.getHouseFiles()));
@@ -151,7 +133,7 @@ public class HouseService {
         houseMapper.insertUserMsg(userMsg);
         User agent = agencyService.getAgentDetail(userMsg.getAgentId());
         try {
-            mailService.sendMail("来自用户" + userMsg.getEmail() + "的留言", userMsg.getMsg(), agent.getEmail());
+            mailService.sendMail("from " + userMsg.getEmail() + "message", userMsg.getMsg(), agent.getEmail());
         } catch (MessagingException e) {
             e.printStackTrace();
         }
@@ -194,7 +176,7 @@ public class HouseService {
         boolean notNull = false;
         List<House> houseList = new ArrayList<>();
         if (!fileName.matches("^.+\\.(?i)(xls)$") && !fileName.matches("^.+\\.(?i)(xlsx)$")) {
-            throw new Exception("上传文件格式不正确");
+            throw new Exception("upload file format problem");
         }
         boolean isExcel2003 = true;
         if (fileName.matches("^.+\\.(?i)(xlsx)$")) {

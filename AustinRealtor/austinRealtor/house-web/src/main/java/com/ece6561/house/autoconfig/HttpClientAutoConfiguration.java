@@ -21,11 +21,6 @@ public class HttpClientAutoConfiguration {
         this.properties = properties;
     }
 
-    /**
-     * httpclient bean的定义
-     *
-     * @return
-     */
     @Bean
     @ConditionalOnMissingBean(HttpClient.class)
     public HttpClient httpClient() {

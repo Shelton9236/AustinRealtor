@@ -25,14 +25,4 @@ public class CommentController {
         commentService.addHouseComment(houseId, content, userId);
         return "redirect:/house/detail?id=" + houseId;
     }
-
-//    @RequestMapping(value = "comment/leaveBlogComment", method = {RequestMethod.POST, RequestMethod.GET})
-//    public String leaveBlogComment(String content, Integer blogId, ModelMap modelMap, RedirectAttributes
-//            redirectAttributes) {
-//        User user = UserContext.getUser();
-//        Long userId = user.getId();
-//        commentService.addBlogComment(blogId, content, userId);
-//        return "redirect:/blog/detail?id=" + blogId;
-//    }
-
 }

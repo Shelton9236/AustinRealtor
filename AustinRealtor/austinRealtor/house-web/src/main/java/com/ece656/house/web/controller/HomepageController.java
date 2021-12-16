@@ -23,7 +23,6 @@ public class HomepageController {
         return "/homepage/index";
     }
 
-
     @RequestMapping("")
     public String index(ModelMap modelMap) {
         return "redirect:/index";

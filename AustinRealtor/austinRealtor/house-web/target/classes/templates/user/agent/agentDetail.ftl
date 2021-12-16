@@ -95,35 +95,6 @@
                         </section><!-- /#agent-properties -->
                         <hr class="thick">
                         <div class="row">
-<#--                            <div class="col-md-5">-->
-<#--                                <section id="agent-testimonials">-->
-<#--                                    <h3>What Other Said About Me</h3>-->
-<#--                                    <div class="owl-carousel testimonials-carousel small">-->
-<#--                                        <blockquote class="testimonial">-->
-<#--                                            <figure>-->
-<#--                                                <div class="image">-->
-<#--                                                    <img alt="" src="/static/assets/img/client-01.jpg">-->
-<#--                                                </div>-->
-<#--                                            </figure>-->
-<#--                                            <aside class="cite">-->
-<#--                                                <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>-->
-<#--                                                <footer>Natalie Jenkins</footer>-->
-<#--                                            </aside>-->
-<#--                                        </blockquote>-->
-<#--                                        <blockquote class="testimonial">-->
-<#--                                            <figure>-->
-<#--                                                <div class="image">-->
-<#--                                                    <img alt="" src="/static/assets/img/client-01.jpg">-->
-<#--                                                </div>-->
-<#--                                            </figure>-->
-<#--                                            <aside class="cite">-->
-<#--                                                <p>Fusce risus metus, placerat in consectetur eu, porttitor a est sed sed dolor lorem cras adipiscing</p>-->
-<#--                                                <footer>Natalie Jenkins</footer>-->
-<#--                                            </aside>-->
-<#--                                        </blockquote>-->
-<#--                                    </div><!-- /.testimonials-carousel &ndash;&gt;-->
-<#--                                </section><!-- /#agent-testimonial &ndash;&gt;-->
-<#--                            </div><!-- /.col-md-5 &ndash;&gt;-->
                             <div class="col-md-7">
                                 <h3>Leave Msg</h3>
                                 <div class="agent-form">

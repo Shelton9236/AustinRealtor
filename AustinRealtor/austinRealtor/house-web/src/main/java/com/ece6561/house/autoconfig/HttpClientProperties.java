@@ -53,5 +53,4 @@ public class HttpClientProperties {
         this.maxConnTotaol = maxConnTotaol;
     }
 
-
 }

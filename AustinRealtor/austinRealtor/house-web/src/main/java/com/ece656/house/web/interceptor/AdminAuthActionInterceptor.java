@@ -27,7 +27,6 @@ public class AdminAuthActionInterceptor implements HandlerInterceptor {
             }
         }
         return true;
-
     }
 
     @Override
@@ -41,5 +40,4 @@ public class AdminAuthActionInterceptor implements HandlerInterceptor {
             throws Exception {
 
     }
-
 }

@@ -16,5 +16,4 @@ public class CityService {
         city.setId(1);
         return Lists.newArrayList(city);
     }
-
 }

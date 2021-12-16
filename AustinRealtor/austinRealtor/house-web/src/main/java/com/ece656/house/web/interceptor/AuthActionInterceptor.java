@@ -23,10 +23,10 @@ public class AuthActionInterceptor implements HandlerInterceptor {
             String target = URLEncoder.encode(request.getRequestURL().toString(), "utf-8");
             if ("GET".equalsIgnoreCase(request.getMethod())) {
                 response.sendRedirect("/accounts/signin?errorMsg=" + msg + "&target=" + target);
-                return false;//修复bug,未登录要返回false
+                return false;
             } else {
                 response.sendRedirect("/accounts/signin?errorMsg=" + msg);
-                return false;//修复bug,未登录要返回false
+                return false;
             }
         }
         return true;
@@ -43,5 +43,4 @@ public class AuthActionInterceptor implements HandlerInterceptor {
             throws Exception {
 
     }
-
 }

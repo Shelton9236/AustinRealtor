@@ -10,13 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FilterBeanConfig {
 
-    /**
-     * 1.构造filter
-     * 2.配置拦截urlPattern
-     * 3.利用FilterRegistrationBean进行包装
-     *
-     * @return
-     */
     @Bean
     public FilterRegistrationBean logFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();

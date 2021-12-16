@@ -43,6 +43,4 @@ public class WebMvcConf extends WebMvcConfigurerAdapter {
                 .addPathPatterns("/admin/user/changepwd").addPathPatterns("/admin/user/delete");
         super.addInterceptors(registry);
     }
-
-
 }

@@ -56,6 +56,4 @@ public class AuthInterceptor implements HandlerInterceptor {
         UserContext.remove();
         AdminContext.remove();
     }
-
-
 }

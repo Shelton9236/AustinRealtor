@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 public class DruidConfiguration {
     @Bean
     public ServletRegistrationBean DruidStatViewServlet() {
-        //org.springframework.boot.context.embedded.ServletRegistrationBean提供类的进行注册.
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
         //添加初始化参数
         servletRegistrationBean.addInitParameter("allow", "127.0.0.1");
@@ -36,5 +35,4 @@ public class DruidConfiguration {
         filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
         return filterRegistrationBean;
     }
-
 }

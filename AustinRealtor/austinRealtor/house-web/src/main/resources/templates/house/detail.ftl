@@ -122,59 +122,6 @@
                             </div><!-- /.col-md-8 -->
                            
                             <div class="col-md-12 col-sm-12">
-<#--                                <#if (agent)?? >-->
-<#--                                   <section id="contact-agent">-->
-<#--                                    <header><h2>联系经纪人</h2></header>-->
-<#--                                    <div class="row">-->
-<#--                                        <section class="agent-form">-->
-<#--                                            <div class="col-md-7 col-sm-12">-->
-<#--                                                <aside class="agent-info clearfix">-->
-<#--                                                    <figure><a href="/agency/agentDetail?id=${(agent.id)!}"><img alt="" src="${(agent.avatar)!}"></a></figure>-->
-<#--                                                    <div class="agent-contact-info">-->
-<#--                                                        <h3>${(agent.name)!}</h3>-->
-<#--                                                        <p>-->
-<#--                                                            ${(agent.aboutme)!}-->
-<#--                                                        </p>-->
-<#--                                                        <dl>-->
-<#--                                                            <dt>手机:</dt>-->
-<#--                                                            <dd>${(agent.phone)!}</dd>-->
-<#--                                                            <dt>Email:</dt>-->
-<#--                                                            <dd><a href="mailto:#">${(agent.email)!}</a></dd>-->
-<#--                                                            <dt>&nbsp;&nbsp;&nbsp;</dt>-->
-<#--                                                            <dd>&nbsp;&nbsp;&nbsp;</dd>-->
-<#--                                                        </dl>-->
-<#--                                                        <hr>-->
-<#--                                                    </div>-->
-<#--                                                </aside><!-- /.agent-info &ndash;&gt;-->
-<#--                                            </div><!-- /.col-md-7 &ndash;&gt;-->
-<#--                                            <div class="col-md-5 col-sm-12">-->
-<#--                                                <div class="agent-form">-->
-<#--                                                    <form role="form" id="form-contact-agent" method="post" action="/house/leaveMsg" class="clearfix">-->
-<#--                                                        <div class="form-group">-->
-<#--                                                            <label for="form-contact-agent-name">你的名字<em>*</em></label>-->
-<#--                                                            <input type="hidden" name="agentId" value="${(agent.id)!}">-->
-<#--                                                            <input type="hidden" name="houseId" value="${house.id}">-->
-<#--                                                            <input type="text" class="form-control" id="name" name="userName" required>-->
-<#--                                                        </div><!-- /.form-group &ndash;&gt;-->
-<#--                                                        <div class="form-group">-->
-<#--                                                            <label for="form-contact-agent-email">你的邮箱<em>*</em></label>-->
-<#--                                                            <input type="email" class="form-control" id="form-contact-agent-email" name="email" required>-->
-<#--                                                        </div><!-- /.form-group &ndash;&gt;-->
-<#--                                                        <div class="form-group">-->
-<#--                                                            <label for="form-contact-agent-message">你的留言<em>*</em></label>-->
-<#--                                                            <textarea class="form-control" id="form-contact-agent-message" rows="2" name="msg" required></textarea>-->
-<#--                                                        </div><!-- /.form-group &ndash;&gt;-->
-<#--                                                        <div class="form-group">-->
-<#--                                                            <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Send a Message</button>-->
-<#--                                                        </div><!-- /.form-group &ndash;&gt;-->
-<#--                                                        <div id="form-contact-agent-status"></div>-->
-<#--                                                    </form><!-- /#form-contact &ndash;&gt;-->
-<#--                                                </div><!-- /.agent-form &ndash;&gt;-->
-<#--                                            </div><!-- /.col-md-5 &ndash;&gt;-->
-<#--                                        </section><!-- /.agent-form &ndash;&gt;-->
-<#--                                    </div><!-- /.row &ndash;&gt;-->
-<#--                                   </section><!-- /#contact-agent &ndash;&gt;-->
-<#--                                </#if>-->
                                
                                 <hr class="thick">
                                 <section id="comments">
@@ -271,7 +218,6 @@
     <@common.footer/>
     <!-- end Page Footer -->
 </div>
-<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyABT1kCnk8CW4Ckpd0RisUg25PIdDD3Gfg"></script> -->
 
 <@common.js/>
 
@@ -333,9 +279,6 @@
             commonAjax('/house/unbookmark?id=${house.id}');
         }
     });
-    
-   
-
         
  </script>
 

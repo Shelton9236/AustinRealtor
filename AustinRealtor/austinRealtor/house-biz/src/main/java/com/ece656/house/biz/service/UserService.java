@@ -40,12 +40,6 @@ public class UserService {
         return userMapper.selectUsers();
     }
 
-    /**
-     * 1.插入数据库，非激活;密码加盐md5;保存头像文件到本地 2.生成key，绑定email 3.发送邮件给用户
-     *
-     * @param account
-     * @return
-     */
     @Transactional(rollbackFor = Exception.class)
     public boolean addAccount(User account) {
         account.setPasswd(HashUtils.encryPassword(account.getPasswd()));
@@ -69,13 +63,6 @@ public class UserService {
         return mailService.enable(key);
     }
 
-    /**
-     * 用户名密码验证
-     *
-     * @param username
-     * @param password
-     * @return
-     */
     public User auth(String username, String password) {
         User user = new User();
         user.setEmail(username);
@@ -122,12 +109,6 @@ public class UserService {
         }
     }
 
-    /**
-     * 重置密码操作
-     *
-     * @param key
-     * @param password
-     */
     @Transactional(rollbackFor = Exception.class)
     public User reset(String key, String password) {
         String email = getResetEmail(key);

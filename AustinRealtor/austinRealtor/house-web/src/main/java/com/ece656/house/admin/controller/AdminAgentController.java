@@ -100,7 +100,4 @@ public class AdminAgentController {
         userService.deleteUser(user.getEmail());
         return "redirect:/admin/adminAgent/list?id="+id+ResultMsg.successMsg("删除成功").asUrlParams();
     }
-
-
-
 }

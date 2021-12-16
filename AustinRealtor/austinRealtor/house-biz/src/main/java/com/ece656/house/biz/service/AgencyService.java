@@ -21,12 +21,6 @@ public class AgencyService {
     @Value("${file.prefix}")
     private String imgPrefix;
 
-    /**
-     * 访问user表获取详情 添加用户头像
-     *
-     * @param userId
-     * @return
-     */
     public User getAgentDetail(Long userId) {
         User user = new User();
         user.setId(userId);
@@ -35,7 +29,6 @@ public class AgencyService {
         setImg(list);
         if (!list.isEmpty()) {
             User agent = list.get(0);
-            //将经纪人关联的经纪机构也一并查询出来
             Agency agency = new Agency();
             agency.setId(agent.getAgencyId().intValue());
             List<Agency> agencies = agencyMapper.select(agency);

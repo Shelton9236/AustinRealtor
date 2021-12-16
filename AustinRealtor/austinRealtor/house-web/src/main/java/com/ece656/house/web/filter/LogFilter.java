@@ -21,12 +21,9 @@ public class LogFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-//        logger.info("Request--coming");
         chain.doFilter(request, response);
     }
 
     public void destroy() {
-
     }
-
 }

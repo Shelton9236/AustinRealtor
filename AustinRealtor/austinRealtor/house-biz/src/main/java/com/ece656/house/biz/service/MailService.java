@@ -50,7 +50,7 @@ public class MailService {
                             user.setEmail(email);
                             List<User> targetUser = userMapper.selectUsersByQuery(user);
                             if (!targetUser.isEmpty() && Objects.equal(targetUser.get(0).getEnable(), 0)) {
-                                userMapper.delete(email);//在删除前首先判断用户是否已经被激活，对于未激活的用户进行移除操作
+                                userMapper.delete(email);
                             }
 
                         }
@@ -71,11 +71,6 @@ public class MailService {
         mailSender.send(mimeMessage);
     }
 
-    /**
-     * 1.缓存key-email的关系 2.借助spring mail 发送邮件 3.借助异步框架进行异步操作
-     *
-     * @param email
-     */
     @Async
     public void registerNotify(String email) throws MessagingException {
         String randomKey = RandomStringUtils.randomAlphabetic(10);
@@ -84,15 +79,10 @@ public class MailService {
         url.append("<a href=\"http://");
         url.append(domainName);
         url.append("/accounts/verify?key=");
-        url.append(randomKey+"\">点击超链接即可激活账户</a>");
-        sendMail("恋家房产销售平台激活邮件", url.toString(), email);
+        url.append(randomKey+"\">click link to activate</a>");
+        sendMail("activation email from AustinRealtor", url.toString(), email);
     }
 
-    /**
-     * 发送重置密码邮件
-     *
-     * @param email
-     */
     @Async
     public void resetNotify(String email) throws MessagingException {
         String randomKey = RandomStringUtils.randomAlphanumeric(10);
@@ -101,8 +91,8 @@ public class MailService {
         url.append("<a href=\"http://");
         url.append(domainName);
         url.append("/accounts/reset?key=");
-        url.append(randomKey+"\">点击超链接即可重置密码</a>");
-        sendMail("恋家房产销售平台密码重置邮件", url.toString(), email);
+        url.append(randomKey+"\">click the link to reset</a>");
+        sendMail("reset password email from AustinRealtor", url.toString(), email);
     }
 
     public String getResetEmail(String key) {

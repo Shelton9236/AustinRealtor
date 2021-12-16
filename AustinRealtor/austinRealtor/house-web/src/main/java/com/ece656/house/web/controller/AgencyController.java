@@ -110,13 +110,10 @@ public class AgencyController {
     @RequestMapping("agency/submit")
     public String agencySubmit(Agency agency) {
         User user = UserContext.getUser();
-        if (user == null || !Objects.equal(user.getEmail(), "jgcs12345@163.com")) {//只有超级管理员可以添加,
-            // 拟定jgcs12345@163.com为超管
+        if (user == null || !Objects.equal(user.getEmail(), "jgcs12345@163.com")) {
             return "redirect:/accounts/signin?" + ResultMsg.successMsg("Please Login!").asUrlParams();
         }
         agencyService.add(agency);
         return "redirect:/index?" + ResultMsg.successMsg("Success").asUrlParams();
     }
-
-
 }

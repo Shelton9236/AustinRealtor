@@ -41,12 +41,11 @@ public class RecommendService {
         try {
             Jedis jedis = getJedis();
             jedis.zincrby(HOT_HOUSE_KEY, 1.0D, id + "");
-            jedis.zremrangeByRank(HOT_HOUSE_KEY, 0, -11);// 0代表第一个元素,-1代表最后一个元素，保留热度由低到高末尾10个房产信息
+            jedis.zremrangeByRank(HOT_HOUSE_KEY, 0, -11);
             jedis.close();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }
-
     }
 
     public List<Long> getHot() {

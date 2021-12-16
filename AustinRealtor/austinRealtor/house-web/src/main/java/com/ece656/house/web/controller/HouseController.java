@@ -51,14 +51,6 @@ public class HouseController {
     @Autowired
     private CommentService commentService;
 
-    /**
-     * 1.实现分页
-     * 2.支持小区搜索、类型搜索
-     * 3.支持排序
-     * 4.支持展示图片、价格、标题、地址等信息
-     *
-     * @return
-     */
     @RequestMapping("/house/list")
     public String houseList(Integer pageSize, Integer pageNum, House query, ModelMap modelMap) {
         PageData<House> ps = houseService.queryHouse(query, PageParams.build(pageSize, pageNum));
@@ -94,13 +86,6 @@ public class HouseController {
         return "/house/ownlist";
     }
 
-    /**
-     * 查询房屋详情
-     * 查询关联经纪人
-     *
-     * @param id
-     * @return
-     */
     @RequestMapping("house/detail")
     public String houseDetail(Long id, ModelMap modelMap) {
         House house = houseService.queryOneHouse(id);
@@ -122,10 +107,9 @@ public class HouseController {
     @RequestMapping("house/leaveMsg")
     public String houseMsg(UserMsg userMsg) {
         houseService.addUserMsg(userMsg);
-        return "redirect:/house/detail?id=" + userMsg.getHouseId() + ResultMsg.successMsg("留言成功").asUrlParams();
+        return "redirect:/house/detail?id=" + userMsg.getHouseId() + ResultMsg.successMsg("Success").asUrlParams();
     }
 
-    //1.评分
     @ResponseBody
     @RequestMapping("house/rating")
     public ResultMsg houseRate(Double rating, Long id) {
@@ -133,8 +117,6 @@ public class HouseController {
         return ResultMsg.successMsg("ok");
     }
 
-
-    //2.收藏
     @ResponseBody
     @RequestMapping("house/bookmark")
     public ResultMsg bookmark(Long id) {
@@ -143,7 +125,6 @@ public class HouseController {
         return ResultMsg.successMsg("ok");
     }
 
-    //3.删除收藏
     @ResponseBody
     @RequestMapping("house/unbookmark")
     public ResultMsg unbookmark(Long id) {
@@ -160,7 +141,6 @@ public class HouseController {
         return "redirect:/house/ownlist";
     }
 
-    //4.收藏列表
     @RequestMapping("house/bookmarked")
     public String bookmarked(House house, Integer pageNum, Integer pageSize, ModelMap modelMap) {
         User user = UserContext.getUser();
@@ -174,25 +154,18 @@ public class HouseController {
     @RequestMapping("/exportHouseinfo")
     public void exportHouse(HttpServletRequest request, HttpServletResponse response) {
         List<House> houseList = houseService.getHouses();
-        // 创建工作簿
         HSSFWorkbook workbook = new HSSFWorkbook();
-        // 创建表
-        HSSFSheet sheet = workbook.createSheet("房产信息导出excel");
-        // 创建行
+        HSSFSheet sheet = workbook.createSheet("house info excel");
         HSSFRow row = sheet.createRow(0);
-        // 创建单元格样式
         HSSFCellStyle cellStyle = workbook.createCellStyle();
-        // 表头
-        String[] head = {"id", "名称", "类型", "价格", "图片地址", "面积", "卧室数量", "卫生间数量", "评分", "房产描述", "属性", "户型图", "标签",
-                "创建时间", "城市id", "社区id", "房产地址", "状态"};
+        String[] head = {"id", "name", "type", "price", "images", "area", "beds", "baths", "rating", "remarks", "properties", "floor plan", "tags",
+                "create_time", "city_id", "community_id", "address", "state"};
         HSSFCell cell;
-        // 设置表头
         for (int iHead = 0; iHead < head.length; iHead++) {
             cell = row.createCell(iHead);
             cell.setCellValue(head[iHead]);
             cell.setCellStyle(cellStyle);
         }
-        // 设置表格内容
         for (int iBody = 0; iBody < houseList.size(); iBody++) {
             row = sheet.createRow(iBody + 1);
             House hs = houseList.get(iBody);
@@ -200,7 +173,7 @@ public class HouseController {
             userArray[0] = hs.getId() + "";
             userArray[1] = hs.getName();
             userArray[2] = hs.getType() == 1 ? "For Sale" : "For Rent";
-            userArray[3] = hs.getPrice() + "万";
+            userArray[3] = hs.getPrice() + "";
             userArray[4] = hs.getImages();
             userArray[5] = hs.getArea() + "";
             userArray[6] = hs.getBeds() + "";
@@ -214,14 +187,13 @@ public class HouseController {
             userArray[14] = hs.getCityId() + "";
             userArray[15] = hs.getCommunityId() + "";
             userArray[16] = hs.getAddress();
-            userArray[17] = hs.getState() == 1 ? "上架" : "下架";
+            userArray[17] = hs.getState() == 1 ? "on sale" : "not on sale";
             for (int iArray = 0; iArray < userArray.length; iArray++) {
                 row.createCell(iArray).setCellValue(userArray[iArray]);
             }
 
         }
-        // 生成Excel文件
-        FileUtil.createFile(response, workbook, "房产信息数据导出");
+        FileUtil.createFile(response, workbook, "house info excel");
     }
 
     @PostMapping("/importHouseinfo")
@@ -235,6 +207,4 @@ public class HouseController {
         }
         return a;
     }
-
-
 }

@@ -14,7 +14,6 @@
 
     <typeAliases>
         <typeAlias type="com.ece656.house.common.model.User" alias="user"/>
-        <typeAlias type="com.ece656.house.common.model.Admin" alias="admin"/>
         <typeAlias type="com.ece656.house.common.model.Agency" alias="agency"/>
         <typeAlias type="com.ece656.house.common.model.House" alias="house"/>
         <typeAlias type="com.ece656.house.common.model.City" alias="city"/>
@@ -26,7 +25,6 @@
 
     <mappers>
         <mapper resource="mapper/user.xml"/>
-        <mapper resource="mapper/admin.xml"/>
         <mapper resource="mapper/house.xml"/>
         <mapper resource="mapper/comment.xml"/>
         <mapper resource="mapper/agency.xml"/>

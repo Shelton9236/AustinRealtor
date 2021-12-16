@@ -21,11 +21,6 @@ public class DruidConfiguration {
         return servletRegistrationBean;
     }
 
-    /**
-     * 注册一个：filterRegistrationBean
-     *
-     * @return
-     */
     @Bean
     public FilterRegistrationBean druidStatFilter2() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());

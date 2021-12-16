@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ece656.house.common.model.Admin;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,12 +33,8 @@ public class AuthInterceptor implements HandlerInterceptor {
         }
         HttpSession session = request.getSession(true);
         User user = (User) session.getAttribute(CommonConstants.USER_ATTRIBUTE);
-        Admin admin =(Admin) session.getAttribute(CommonConstants.ADMIN_ATTRIBUTE);
         if (user != null) {
             UserContext.setUser(user);
-        }
-        if(admin != null){
-            AdminContext.setAdmin(admin);
         }
         return true;
     }
@@ -54,6 +49,5 @@ public class AuthInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
             throws Exception {
         UserContext.remove();
-        AdminContext.remove();
     }
 }

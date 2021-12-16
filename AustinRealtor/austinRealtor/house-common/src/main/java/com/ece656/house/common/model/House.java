@@ -131,7 +131,7 @@ public class House {
 
     public void setPrice(Integer price) {
         this.price = price;
-        this.priceStr = this.price + "万";
+        this.priceStr = this.price + "";
     }
 
     public Integer getArea() {

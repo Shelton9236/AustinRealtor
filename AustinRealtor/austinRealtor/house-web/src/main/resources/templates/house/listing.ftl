@@ -49,14 +49,14 @@
                                 <figure class="tag status">${house.typeStr}</figure>
                                 <div class="property-image">
                                     <figure class="ribbon">In Hold</figure>
-                                    <a href="/house/detail?id=${house.id}">
+                                    <a href="/house/detail?id=${house.id?c}">
                                         <img alt="" src="${house.firstImg}" style="width: 260px;height: 195px" >
                                     </a>
                                 </div>
 
                                 <div class="info" style="width: 300px">
                                     <header>
-                                        <a href="/house/detail?id=${house.id}"><h3>${house.name}</h3></a>
+                                        <a href="/house/detail?id=${house.id?c}"><h3>${house.name}</h3></a>
                                         <figure>${house.address}</figure>
 
                                     </header>
@@ -75,7 +75,7 @@
                                         </dl>
                                     </aside>
                                     <br/>
-                                    <a href="/house/detail?id=${house.id}" class="link-arrow">Read More</a>
+                                    <a href="/house/detail?id=${house.id?c}" class="link-arrow">Read More</a>
                                 </div>
                             </div>
                         </#list>
@@ -117,13 +117,13 @@
                             <header><h3>Hot</h3></header>
                             <#list recomHouses as house>
                             <div class="property small">
-                                <a href="/house/detail?id=${house.id}">
+                                <a href="/house/detail?id=${house.id?c}">
                                     <div class="property-image">
                                         <img alt="" src="${(house.firstImg)!}" style="width: 100px;height: 75px">
                                     </div>
                                 </a>
                                 <div class="info">
-                                    <a href="/house/detail?id=${house.id}"><h4>${(house.name)!}</h4></a>
+                                    <a href="/house/detail?id=${house.id?c}"><h4>${(house.name)!}</h4></a>
                                     <figure>${(house.address)!} </figure>
                                     <div class="tag price">$${(house.price)!} </div>
                                 </div>

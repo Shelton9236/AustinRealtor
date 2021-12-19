@@ -61,7 +61,7 @@
                     <div class="overlay">
                         <div class="info">
                             <div class="tag price"> $1895000</div>
-                            <h3>Austin Houses</h3>
+                            <h3>Realty Austin</h3>
                             <figure>2011 Rabb Gelen St</figure>
                         </div>
                         <hr>
@@ -86,11 +86,11 @@
                                 <h2>Search</h2>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="search-box-property-id" name="name"
-                                           placeholder="City or Agency">
+                                           placeholder="City or Agent Name ">
                                 </div>
                                 <div class="form-group">
                                     <select name="type">
-<#--                                        <option value="1">Type</option>-->
+                                        <option value="1">Type</option>
                                         <option value="1">Sale</option>
                                         <option value="2">Rent</option>
                                     </select>

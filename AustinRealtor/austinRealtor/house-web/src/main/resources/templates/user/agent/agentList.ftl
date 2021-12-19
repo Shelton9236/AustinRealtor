@@ -15,7 +15,7 @@
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Agents</a></li>
-                <li class="active">Agent Listings</li>
+                <li class="active">Agent List</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->

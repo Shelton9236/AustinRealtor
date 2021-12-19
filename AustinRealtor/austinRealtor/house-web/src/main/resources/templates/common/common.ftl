@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="/static/assets/css/toastr.css" type="text/css">
 
-    <title>AustinRealtor</title>
+    <title>Austin Realtor</title>
 </head>
 </#macro>
 
@@ -34,7 +34,7 @@
                            <article>
                                <h3>About Us</h3>
                                <p>
-                                   ECE656
+                                   ECE656 Group 20: Xiaotong Liu, Stella Guo
                                </p>
                                <hr>
                            </article>
@@ -42,7 +42,8 @@
                        <div class="col-md-3 col-sm-3">
                            <article>
                                <h3>Contacts</h3>
-                               <a href="#">1663911668@qq.com</a>
+                               <a href="#">x772liu@uwaterloo.ca</a>
+                               <a href="#">l64guo@uwaterloo.ca</a>
                            </article>
                        </div><!-- /.col-sm-3 -->
                        <div class="col-md-3 col-sm-3">
@@ -124,11 +125,11 @@
 
         <div class="form-group">
             <input type="text" class="form-control" id="search-box-property-id" value="${(vo.name)!}" name="name"
-                   placeholder="City or Agent Name">
+                   placeholder="City or Agency">
         </div>
         <div class="form-group">
             <select name="type">
-                <option value="1">Type</option>
+<#--                <option value="1">Type</option>-->
                 <option value="1" <#if (vo.type)?? && (vo.type)==1> selected </#if> >Sale</option>
                 <option value="2" <#if (vo.type)?? && (vo.type)==2> selected </#if> >Rent</option>
             </select>
@@ -187,16 +188,16 @@
              <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                  <ul class="nav navbar-nav">
                      <li><a href="/index">Main</a></li>
-                     <li class="has-child"><a href="/house/list">Realty</a>
+                     <li class="has-child"><a href="/house/list">Sale</a>
                          <ul class="child-navigation">
                              <li><a href="/house/list?type=1">Sale</a></li>
                              <li><a href="/house/list?type=2">Rent</a></li>
                          </ul>
                      </li>
-                     <li class="has-child"><a href="#">Agent</a>
+                     <li class="has-child"><a href="#">Agent/Broker </a>
                          <ul class="child-navigation">
-                             <li><a href="/agency/agentList">Agent/Broker List</a></li>
-                             <li><a href="/agency/list">Agency List</a></li>
+                             <li><a href="/agency/agentList">Agent/Broker</a></li>
+                             <li><a href="/agency/list">Agency</a></li>
                          </ul>
                      </li>
 <#--                     <li><a href="/blog/list">房产百科</a></li>-->

@@ -15,7 +15,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li class="active">Realtor List</li>
+                <li class="active">House Listings</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -27,17 +27,17 @@
                 <!-- Results -->
                 <div class="col-md-9 col-sm-9">
                     <section id="results">
-                        <header><h1>Realtor List</h1></header>
+                        <header><h1>House Listings</h1></header>
                         <section id="search-filter">
                             <figure><h3><i class="fa fa-search"></i>Results:</h3>
                                 <span class="search-count"></span>
                                  <div class="sorting">
                                     <div class="form-group">
                                         <select name="sorting" id="sorting">
-                                        <option value="">Sort</option>
-                                        <option value="price_asc"   <#if (vo.sort) == "price_asc">   selected </#if>  >prive low to high</option>
-                                        <option value="price_desc"  <#if (vo.sort) == "price_desc">  selected </#if> >price high to low</option>
-                                            <option value="time_desc"   <#if (vo.sort) == "time_desc">   selected </#if> >Date Built</option>
+<#--                                        <option value="">Sort</option>-->
+                                        <option value="price_asc"   <#if (vo.sort) == "price_asc">   selected </#if>  >Price low to high</option>
+                                        <option value="price_desc"  <#if (vo.sort) == "price_desc">  selected </#if> >Price high to low</option>
+                                            <option value="time_desc"   <#if (vo.sort) == "time_desc">   selected </#if> >Release Date</option>
                                         </select>
                                     </div><!-- /.form-group -->
                                 </div>
@@ -49,14 +49,14 @@
                                 <figure class="tag status">${house.typeStr}</figure>
                                 <div class="property-image">
                                     <figure class="ribbon">In Hold</figure>
-                                    <a href="/house/detail?id=${house.id}">
+                                    <a href="/house/detail?id=${house.id?c}">
                                         <img alt="" src="${house.firstImg}" style="width: 260px;height: 195px" >
                                     </a>
                                 </div>
 
                                 <div class="info" style="width: 300px">
                                     <header>
-                                        <a href="/house/detail?id=${house.id}"><h3>${house.name}</h3></a>
+                                        <a href="/house/detail?id=${house.id?c}"><h3>${house.name}</h3></a>
                                         <figure>${house.address}</figure>
 
                                     </header>
@@ -75,7 +75,7 @@
                                         </dl>
                                     </aside>
                                     <br/>
-                                    <a href="/house/detail?id=${house.id}" class="link-arrow">Read More</a>
+                                    <a href="/house/detail?id=${house.id?c}" class="link-arrow">Read More</a>
                                 </div>
                             </div>
                         </#list>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select name="type">
-                                        <option value="1" >Type</option>
+<#--                                        <option value="1" >Type</option>-->
                                         <option value="1" <#if (vo.type)?? && (vo.type)==1> selected </#if> >Sale</option>
                                         <option value="2" <#if (vo.type)?? && (vo.type)==2> selected </#if> >Rent</option>
                                     </select>
@@ -117,13 +117,13 @@
                             <header><h3>Hot</h3></header>
                             <#list recomHouses as house>
                             <div class="property small">
-                                <a href="/house/detail?id=${house.id}">
+                                <a href="/house/detail?id=${house.id?c}">
                                     <div class="property-image">
                                         <img alt="" src="${(house.firstImg)!}" style="width: 100px;height: 75px">
                                     </div>
                                 </a>
                                 <div class="info">
-                                    <a href="/house/detail?id=${house.id}"><h4>${(house.name)!}</h4></a>
+                                    <a href="/house/detail?id=${house.id?c}"><h4>${(house.name)!}</h4></a>
                                     <figure>${(house.address)!} </figure>
                                     <div class="tag price">$${(house.price)!} </div>
                                 </div>

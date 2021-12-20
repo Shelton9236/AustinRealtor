@@ -149,7 +149,7 @@
                                             </figure>
                                             <div class="comment-wrapper">
                                                 <div class="name pull-left">${comment.userName}</div>
-                                                <span class="date pull-right"><span class="fa fa-calendar"></span>${(comment.createTime)?datetime}</span>
+                                                <span class="date pull-right"><span class="fa fa-calendar"></span>${(comment.createTime)?date}</span>
                                                 <p>${comment.content}
                                                 </p>
                                                 <hr>

@@ -9,8 +9,8 @@
     <select id="selectUsersByID" resultType="user">
         select * from vw_user
         <where>
-            <if test="id !=null">
-                and id = #{id}
+            <if test="email != null">
+                and email = #{email}
             </if>
         </where>
     </select>

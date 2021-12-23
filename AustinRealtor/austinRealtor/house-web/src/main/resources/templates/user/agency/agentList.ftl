@@ -13,9 +13,9 @@
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#">Agents</a></li>
-                <li class="active">Agent List</li>
+                <li class="active">Agent Listings</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -25,7 +25,7 @@
                 <!-- Agent Detail -->
                 <div class="col-md-9 col-sm-9">
                     <section id="agents-listing">
-                        <header><h1>Agent List</h1></header>
+                        <header><h1>Agent Listings</h1></header>
                         <div class="row">
                           <#list ps.list as agent>
                             <div class="col-md-12 col-lg-6" >

@@ -8,9 +8,7 @@
 		  address,
 		  phone,
 		  email,
-		  about_us,
-		  mobile,
-		  web_site
+		  about_us
    </sql>
 
     <select id="select" resultType="agency">
@@ -34,16 +32,13 @@
 				        phone,
 				        email,
 				        about_us,
-				        mobile,
-				        web_site)
+				        )
                   value(
                        #{name},
                        #{address},
                        #{phone},
                        #{email},
-                       #{aboutUs},
-                       #{mobile},
-                       #{webSite}
+                       #{aboutUs}
                         )
     </insert>
 
@@ -62,9 +57,9 @@
    </sql>
 
     <select id="selectAgent" resultType="user">
-        select * from user
+        select * from vw_agent
         <where>
-            enable = 1 and type = 2
+            enable = 1
             <if test="user.id != null and user.id != 0">
                 and id = #{user.id}
             </if>
@@ -83,9 +78,9 @@
 
     <select id="selectAgentCount" resultType="long">
         select count(id)
-        from user
+        from vw_agent
         <where>
-            enable =1 and type =2
+            enable =1
             <if test="user.id != null and user.id !=0">
                 and id = #{user.id}
             </if>

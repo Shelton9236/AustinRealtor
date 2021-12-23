@@ -3,7 +3,7 @@
 <mapper namespace="com.ece656.house.biz.mapper.HouseMapper">
 
     <select id="selectHouses" resultType="house">
-     select * from house
+     select * from vw_house
    </select>
 
     <sql id="houseField">
@@ -70,7 +70,7 @@
     <select id="selectPageHouses" resultType="house">
         select
         <include refid="houseField"/>
-        from house a
+        from vw_house a
         <include refid="houseCondition"></include>
         <choose>
             <when test="house.sort != null and house.sort == 'price_asc'">
@@ -93,19 +93,19 @@
 
     <select id="selectPageCount" resultType="long">
         select count(id)
-        from house a
+        from vw_house a
         <include refid="houseCondition"></include>
     </select>
 
     <select id="selectHouseById" resultType="long">
         select *
-        from house
+        from vw_house
         where id = #{id}
     </select>
 
     <select id="selectCommunity" resultType="community">
         select *
-        from community
+        from vw_community
         <where>
             <if test="name != null and name != ''">
                 and name = #{name}
@@ -215,8 +215,8 @@
                      )
    </insert>
 
-    <insert id="insertUserMsg">
-     insert into house_msg (
+    <insert id="">
+     insert into  (
                      msg,
                      create_time,
                      user_name,
@@ -239,8 +239,8 @@
 
     <select id="selectNationCount" resultType="String">
      select count(city_id),city_name
-     from city,house
-     where city.id = house.city_id
+     from vw_city,vw_house
+     where vw_city.id = house.city_id
      group by city_id
    </select>
 

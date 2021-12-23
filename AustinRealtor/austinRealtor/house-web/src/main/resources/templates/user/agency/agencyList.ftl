@@ -14,8 +14,8 @@
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Agencies Listing</li>
+                <li><a href="/">Home</a></li>
+                <li class="active">Agency Listings</li>
             </ol>
         </div>
         <!-- end Breadcrumb -->
@@ -25,7 +25,7 @@
                 <!-- Agent Detail -->
                 <div class="col-md-9 col-sm-9">
                     <section id="agencies-listing">
-                        <header><h1>Agencies Listing</h1></header>
+                        <header><h1>Agency Listings</h1></header>
                         <#list agencyList as agency>
                            <div class="agency">
 <#--                            <a href="/agency/agencyDetail?id=${agency.id}" class="agency-image"><img alt="" src="/static/assets/img/agency-logo-02.png"></a>-->
@@ -34,8 +34,8 @@
                                 <dl>
                                     <dt>Phone:</dt>
                                     <dd>${agency.phone}</dd>
-                                    <dt>Mobile:</dt>
-                                    <dd>${agency.mobile}</dd>
+<#--                                    <dt>Mobile:</dt>-->
+<#--                                    <dd>${agency.mobile}</dd>-->
                                     <dt>Email:</dt>
                                     <dd><a href="mailto:#">${agency.email}</a></dd>
                                 </dl>

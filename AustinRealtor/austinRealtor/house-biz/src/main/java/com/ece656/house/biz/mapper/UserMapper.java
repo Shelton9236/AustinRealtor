@@ -18,4 +18,6 @@ public interface UserMapper {
     public List<User> selectUsersByQuery(User user);
 
     public long selectUserCount();
+
+    public List<User> selectUsersByID(User user);
 }

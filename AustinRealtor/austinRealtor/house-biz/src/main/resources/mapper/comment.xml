@@ -7,7 +7,6 @@
 		  content,
 		  house_id,
 		  create_time,
-		  type,
 		  user_id
    </sql>
 
@@ -15,7 +14,7 @@
         select
         <include refid="commentField"/>
         from comment
-        where type =1 and house_id = #{houseId}
+        where house_id = #{houseId}
         order by create_time desc
         limit #{size}
     </select>
@@ -25,13 +24,11 @@
 				          content,
 						  house_id,
 						  create_time,
-						  type,
 						  user_id)
                   value(
                        #{content},
                        #{houseId},
                        #{createTime},
-                       #{type},
                        #{userId}
                   )
     </insert>

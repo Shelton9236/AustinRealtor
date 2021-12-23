@@ -12,7 +12,7 @@ public class CityService {
     public List<City> getAllCitys() {
         City city = new City();
         city.setCityCode("512");
-        city.setCityName("Austin");
+        city.setCityName("manor");
         city.setId(1);
         return Lists.newArrayList(city);
     }

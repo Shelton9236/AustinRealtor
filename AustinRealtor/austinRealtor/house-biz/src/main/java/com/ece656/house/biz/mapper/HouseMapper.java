@@ -50,10 +50,10 @@ public interface HouseMapper {
 
     public List<String> selectNationCount();
 
-    @Select("SELECT COUNT(*) FROM house")
+    @Select("SELECT COUNT(*) FROM vw_house")
     public int selectHouseCount();
 
-    @Delete("DELETE FROM house WHERE ID = #{id}")
+    @Delete("DELETE FROM vw_house WHERE ID = #{id}")
     void delete(Integer id);
 
 }

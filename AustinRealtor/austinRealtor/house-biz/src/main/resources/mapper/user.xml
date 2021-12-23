@@ -3,11 +3,21 @@
 <mapper namespace="com.ece656.house.biz.mapper.UserMapper">
 
     <select id="selectUsers" resultType="user">
-     select * from user
+     select * from vw_user
    </select>
 
+    <select id="selectUsersByID" resultType="user">
+        select * from vw_user
+        <where>
+            <if test="id !=null">
+                and id = #{id}
+            </if>
+        </where>
+    </select>
+
+
     <select id="selectUsersByQuery" resultType="user">
-        select * from user
+        select * from vw_user
         <where>
             <if test="id !=null">
                 and id = #{id}
@@ -28,14 +38,13 @@
     </select>
 
     <insert id="insert">
-    insert into user (
+    insert into vw_user (
                 name,
                 phone,
                 email,
                 aboutme,
                 passwd,
                 avatar,
-                type,
                 create_time,
                 enable
                 )
@@ -46,14 +55,13 @@
                 #{aboutme},
                 #{passwd},
                 #{avatar},
-                #{type},
                 #{createTime},
                 #{enable}
                 )
    </insert>
 
     <delete id="delete">
-    delete from user
+    delete from vw_user
     where email=#{email}
    </delete>
 
@@ -81,6 +89,6 @@
 
     <select id="selectUserCount" resultType="long">
         select count(*)
-        from user
+        from vw_user
     </select>
 </mapper>

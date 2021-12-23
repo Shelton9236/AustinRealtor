@@ -14,7 +14,7 @@
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#">Account</a></li>
                 <li class="active">Profile</li>
             </ol>

@@ -14,7 +14,7 @@
         <!-- Breadcrumb -->
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#">Account</a></li>
                 <li class="active">Profile</li>
             </ol>
@@ -51,7 +51,7 @@
                                         <input type="hidden" value="${(loginUser.email)!}" name="email" />
 
                                         <section id="contact">
-                                            <h3>Contact</h3>
+                                            <h3>Information</h3>
                                             <dl class="contact-fields">
                                                 <dt><label for="form-account-name">Your Name:</label></dt>
                                                 <dd><div class="form-group">

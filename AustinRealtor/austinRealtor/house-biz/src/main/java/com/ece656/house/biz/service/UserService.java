@@ -77,7 +77,8 @@ public class UserService {
 
 
     public List<User> getUserByQuery(User user) {
-        List<User> list = userMapper.selectUsersByQuery(user);
+//        List<User> list = userMapper.selectUsersByQuery(user);
+        List<User> list = userMapper.selectUsersByID(user);
         list.forEach(u -> {
             u.setAvatar(imgPrefix + u.getAvatar());
         });
